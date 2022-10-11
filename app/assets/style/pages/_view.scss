@@ -1,0 +1,31 @@
+.other-op {
+    padding: 0;
+    height: 100vh;
+    .op-half-bg {
+        height:60%;
+        position: relative;
+
+        .op-img {
+            position: absolute;
+            bottom: -50px;
+            width: 100%;
+        }
+    }
+    .op-half-white {
+        height: 40%;
+        padding-top: 100px;
+    }
+}
+
+.article-wrap {
+    .article-img {
+        img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .article-text {
+        padding: 0 15px;
+    }
+}

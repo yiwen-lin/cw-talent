@@ -2,8 +2,7 @@
   display: flex;
   flex-direction:column;
   justify-content: space-between;
-  // height: calc(100vh - 70px);
-  height: 100%;
+  min-height: 100vh;
   padding: 10% 0 0;
   // overflow:hidden;
   @include mobile {
@@ -21,7 +20,7 @@
   .op-wrap {
     display: flex;
     justify-content: center;
-    margin-bottom: 4%;
+    margin-bottom: 6%;
     .op-number {
       font-family: 'Roboto', sans-serif;
       font-weight: 100;
@@ -109,8 +108,11 @@
     }
   }
   .chart-img {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    width: 100%;
+    margin: 32px auto;
+    img {
+      margin:auto;
+    }
   }
   .chart-txt-light {
     display:inline-block;
