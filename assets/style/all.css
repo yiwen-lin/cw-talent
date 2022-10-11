@@ -12784,6 +12784,56 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.nav-tabs {
+  border-bottom: 2px solid #AE441F;
+  padding-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: #B3B3B3;
+  font-size: 28px;
+  padding: 0 3rem 0 0;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #AE441F;
+}
+
+.nav-tabs .nav-link:active {
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .nav-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px 16px;
+  }
+  .nav-tabs .nav-link {
+    border: 1px solid #343a40;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 0;
+    padding: 10px 10px;
+    width: 100%;
+  }
+  .nav-tabs .nav-link.active {
+    border: 1px solid #343a40;
+    background-color: #F3E9D2;
+    color: #000;
+  }
+}
+
+.page-link {
+  border: none;
+  padding: 0.5rem 2rem;
+}
+
 .navbar {
   border-bottom: 1px solid #495057;
   background-color: #fff;
@@ -12881,7 +12931,7 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
+  min-height: 100vh;
   padding: 10% 0 0;
 }
 
@@ -12911,7 +12961,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 4%;
+  margin-bottom: 6%;
 }
 
 .op .op-wrap .op-number {
@@ -13011,8 +13061,12 @@ a:hover {
 }
 
 .chart .chart-img {
-  margin-top: 32px;
-  margin-bottom: 32px;
+  width: 100%;
+  margin: 32px auto;
+}
+
+.chart .chart-img img {
+  margin: auto;
 }
 
 .chart .chart-txt-light {
@@ -13108,6 +13162,38 @@ a:hover {
     padding-right: 32px;
     padding-left: 32px;
   }
+}
+
+.other-op {
+  padding: 0;
+  height: 100vh;
+}
+
+.other-op .op-half-bg {
+  height: 60%;
+  position: relative;
+}
+
+.other-op .op-half-bg .op-img {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+}
+
+.other-op .op-half-white {
+  height: 40%;
+  padding-top: 100px;
+}
+
+.article-wrap .article-img img {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.article-wrap .article-text {
+  padding: 0 15px;
 }
 
 /*# sourceMappingURL=all.css.map */
