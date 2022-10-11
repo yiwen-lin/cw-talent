@@ -1,0 +1,22 @@
+a {    display:inline-block;
+    transition:.3s;
+    &:hover {
+        transition:.3s;
+    }
+}
+.a-line {
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+    transition:.3s;
+    display:inline-block;
+}
+
+.a-text-k {
+    &:hover {
+        color: #000;
+        .a-line {
+            color:$primary;
+            transition:.3s;
+        }
+    }
+}

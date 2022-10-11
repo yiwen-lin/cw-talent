@@ -3,4 +3,18 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
 
-@import './layout/index.scss'
+// helpers
+@import 'helpers/mixin';
+@import 'helpers/base';
+@import 'helpers/text-size';
+
+// components
+@import './components/btn';
+@import './components/carousel';
+
+// layout
+@import './layout/header';
+@import './layout/footer';
+
+// pages
+@import './pages/index';

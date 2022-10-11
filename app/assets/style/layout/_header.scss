@@ -1,0 +1,53 @@
+.navbar {
+    border-bottom: 1px solid $gray-700;
+    background-color: #fff;
+    .navbar-brand {
+        margin: 0;
+        img {
+            width: auto;
+            height: 44px;
+            display: inline-block;
+            vertical-align: middle;
+            @include mobile {
+                height: 34px;
+            }
+        }
+    }
+    .navbar-collapse {
+        @include pc {
+            display: flex;
+            justify-content:end;
+        }
+        @include mobile {
+            padding-top: 10px;
+        }
+}
+
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    @include pc {
+    padding: 0 0 0 48px;
+}
+}
+
+.navbar-light .navbar-toggler {
+    @include mobile {
+        border:none;
+        padding:0;
+    }
+    &:focus {
+        @include mobile {
+            box-shadow: none;
+        }
+    }
+}
+.nav-link {
+    @include mobile {
+        text-align: center;
+        padding:20px 0 ;
+    }
+
+}
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active {
+    color:$primary;
+}
