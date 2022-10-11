@@ -12881,9 +12881,8 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: calc(100vh - 70px);
-  padding: 10% 0 2%;
-  overflow: hidden;
+  height: 100%;
+  padding: 10% 0 0;
 }
 
 @media (max-width: 767px) {
