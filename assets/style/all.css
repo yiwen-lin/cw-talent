@@ -12703,7 +12703,7 @@ h5, .h5, .h5 {
 
 p {
   font-size: 1.125rem;
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 p + p {
@@ -12723,6 +12723,10 @@ section {
   section {
     padding: 56px 0;
   }
+}
+
+.font-sans {
+  font-family: 'Roboto','Noto Sans TC', sans-serif;
 }
 
 a {
@@ -12756,6 +12760,24 @@ a:hover {
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
+}
+
+.block-btn {
+  border: 1px solid #343a40;
+  padding: 8px 28px 9px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.block-btn:hover {
+  background-color: #AE441F;
+  color: #fff;
+}
+
+.block-btn-white {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
 }
 
 .op-slider .carousel-item {
@@ -12824,14 +12846,48 @@ a:hover {
   }
   .nav-tabs .nav-link.active {
     border: 1px solid #343a40;
-    background-color: #F3E9D2;
-    color: #000;
+    background-color: #AE441F;
+    color: #fff;
   }
 }
 
 .page-link {
   border: none;
   padding: 0.5rem 2rem;
+  color: #000;
+}
+
+.page-link:hover {
+  background-color: #fff;
+  border: none;
+  color: #AE441F;
+}
+
+a .shown-when-hover {
+  /* Display none, overridden when the a is hovered over */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Slightly transparent background so the picture shows */
+  background: #fff;
+  border: 1px solid #495057;
+}
+
+a.tooltips-a:hover .shown-when-hover {
+  display: block;
+}
+
+a.tooltips-a {
+  /* These three are important for containing the hover */
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 25%;
+  height: auto;
+  padding: 0 20px;
 }
 
 .navbar {
@@ -13145,6 +13201,28 @@ a:hover {
   }
 }
 
+.bottom-line {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.bottom-line:before {
+  display: block;
+  position: absolute;
+  content: "";
+  border-top: 2px solid #AE441F;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .bottom-line:before {
+    width: calc(100% - 30px);
+    left: 15px;
+  }
+}
+
 .op-article-img img {
   height: 330px;
   width: 100%;
@@ -13165,24 +13243,21 @@ a:hover {
 }
 
 .other-op {
-  padding: 0;
+  padding-top: 120px;
+  padding-bottom: 50px;
   height: 100vh;
-}
-
-.other-op .op-half-bg {
-  height: 60%;
-  position: relative;
-}
-
-.other-op .op-half-bg .op-img {
-  position: absolute;
-  bottom: -50px;
-  width: 100%;
-}
-
-.other-op .op-half-white {
-  height: 40%;
-  padding-top: 100px;
+  background: url(../images/op-bg.svg) center center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .article-wrap .article-img img {
@@ -13194,6 +13269,98 @@ a:hover {
 
 .article-wrap .article-text {
   padding: 0 15px;
+}
+
+.other-op-paper {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .other-op-paper {
+    height: auto;
+    background-image: none;
+    background-color: #F3E9D2;
+  }
+  .other-op-paper .op-title {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+.article-wrap .paper-article-img img {
+  width: auto;
+  margin: auto;
+}
+
+.other-op-cooperation {
+  padding: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media (max-width: 767px) {
+  .other-op-cooperation .cooperation-container {
+    padding: 0;
+  }
+}
+
+.other-op-cooperation .carousel-inner {
+  width: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+@media (max-width: 767px) {
+  .other-op-cooperation .carousel-inner {
+    padding: 0;
+  }
+}
+
+.other-op-cooperation .carousel-item img {
+  height: 78vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .other-op-cooperation .carousel-item img {
+    height: 75vh;
+  }
+}
+
+.other-op-cooperation .carousel-caption {
+  position: relative;
+  color: #000;
+  left: auto;
+  right: auto;
+}
+
+.other-op-cooperation .carousel-control-next-icon {
+  background-image: url(../images/arrow-r.svg);
+}
+
+.other-op-cooperation .carousel-control-prev-icon {
+  background-image: url(../images/arrow-l.svg);
+}
+
+.cooperation-article .article-wrap .article-img img {
+  height: 240px;
+}
+
+.event-article-img img {
+  height: 500px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.submit-section {
+  background: url(../images/hr-bg.jpg) center center no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 /*# sourceMappingURL=all.css.map */
