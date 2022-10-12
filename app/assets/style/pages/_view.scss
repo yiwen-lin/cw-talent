@@ -1,20 +1,13 @@
 .other-op {
-    padding: 0;
+    padding-top: 120px;
+    padding-bottom: 50px;
     height: 100vh;
-    .op-half-bg {
-        height:60%;
-        position: relative;
+    background: url(../images/op-bg.svg) center center no-repeat;
+    background-size: cover;
 
-        .op-img {
-            position: absolute;
-            bottom: -50px;
-            width: 100%;
-        }
-    }
-    .op-half-white {
-        height: 40%;
-        padding-top: 100px;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .article-wrap {
@@ -29,3 +22,4 @@
         padding: 0 15px;
     }
 }
+

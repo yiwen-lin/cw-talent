@@ -1,0 +1,21 @@
+.other-op-paper {
+    justify-content: center;
+    @include mobile {
+        height: auto;
+        background-image: none;
+        background-color: $secondary;
+        .op-title {
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
+    
+}
+.article-wrap {
+    .paper-article-img {
+        img {
+            width: auto;
+            margin: auto;
+        }
+    }
+}

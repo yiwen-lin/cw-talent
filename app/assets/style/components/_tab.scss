@@ -19,7 +19,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 16px 16px;
         .nav-item {
-            // margin: 10px 10px;
+            
         }
         .nav-link {
             border: 1px solid $gray-800;
@@ -34,8 +34,8 @@
             width: 100%;
             &.active {
                 border: 1px solid $gray-800;
-                background-color: $secondary;
-                color: #000;
+                background-color: $primary;
+                color: #fff;
             }
         }
     }

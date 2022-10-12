@@ -1,4 +1,10 @@
 .page-link {
     border: none;
     padding:0.5rem 2rem;
+    color:#000;
+    &:hover {
+        background-color: #fff;
+        border:none;
+        color:$primary;
+    }
 }

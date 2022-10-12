@@ -1,0 +1,53 @@
+.other-op-cooperation {
+    padding: 0;
+    justify-content: start;
+    .cooperation-container {
+        @include mobile {
+            padding: 0;
+        }
+    }
+    .carousel-inner {
+        width: auto;
+        padding-left: 80px;
+        padding-right: 80px;
+        @include mobile {
+            padding: 0;
+        }
+    }
+    .carousel-item {
+        img {
+            height: 78vh;
+            object-fit: cover;
+            @include mobile {
+                height: 75vh;
+            }
+        }
+    }
+    .carousel-caption {
+        position: relative;
+        color: #000;
+        left: auto;
+        right: auto;
+    }
+    .carousel-control-next-icon {
+        background-image: url(../images/arrow-r.svg);
+    }
+    .carousel-control-prev-icon {
+        background-image: url(../images/arrow-l.svg);
+    }
+    // .carousel-control-prev, .carousel-control-next {
+    //     top: auto;
+    //     bottom:-10vh;
+    // }
+
+}
+
+.cooperation-article {
+    .article-wrap {
+        .article-img {
+            img {
+                height: 240px;
+            }
+        }
+    }
+}

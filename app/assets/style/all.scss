@@ -13,6 +13,7 @@
 @import './components/carousel';
 @import './components/tab';
 @import './components/pagination';
+@import './components/tooltips';
 
 // layout
 @import './layout/header';
@@ -21,3 +22,6 @@
 // pages
 @import './pages/index';
 @import './pages/view';
+@import './pages/paper';
+@import './pages/cooperation';
+@import './pages/hr_club';

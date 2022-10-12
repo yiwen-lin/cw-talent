@@ -1,0 +1,23 @@
+// .logo-partner {
+//     width: 25%;
+//     height: auto;
+//     img {
+//         margin: auto;
+//         padding: 0 18px ;
+//     }
+// }
+
+.event-article-img {
+    img {
+      height: 500px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+.submit-section {
+    background: url(../images/hr-bg.jpg) center center no-repeat;
+    background-size: cover;
+    position: relative;
+
+}

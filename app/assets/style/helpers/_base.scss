@@ -4,7 +4,7 @@
 body {
     overflow-x: hidden;
     font-family: 'Noto Serif TC', serif;
-    // font-family: Roboto','Noto Sans TC', sans-serif;
+    // font-family: 'Roboto','Noto Sans TC', sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height:1.7;
@@ -65,7 +65,7 @@ h5,.h5 {
 
 p {
     font-size:1.125rem ;//18px
-    line-height: 1.75;
+    line-height: 1.7;
 }
 p+p {
     margin-top: 24px;
@@ -81,6 +81,10 @@ section {
     @include mobile {
         padding: 56px 0;
     }
+}
+
+.font-sans {
+    font-family: 'Roboto','Noto Sans TC', sans-serif;
 }
 
 
