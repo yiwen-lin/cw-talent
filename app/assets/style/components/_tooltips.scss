@@ -1,29 +1,36 @@
-a .shown-when-hover {
-    /* Display none, overridden when the a is hovered over */
-    display: none;
+// a .shown-when-hover {
+//     display: none;
     
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
     
-    /* Slightly transparent background so the picture shows */
-    background: #fff;
-    border: 1px solid $gray-700;
-  }
+//     background: #fff;
+//     border: 1px solid $gray-700;
+//   }
   
-  a.tooltips-a:hover .shown-when-hover {
-    display: block; 
-  }
+//   a.tooltips-a:hover .shown-when-hover {
+//     display: block; 
+//   }
   
-  a.tooltips-a { 
-    /* These three are important for containing the hover */
-    display: block;
-    position: relative;
-    overflow: hidden;
+//   a.tooltips-a { 
+//     display: block;
+//     position: relative;
+//     overflow: hidden;
     
-    width: 25%;
-    height: auto;
-    padding:0 20px;
-  }
+//     width: 25%;
+//     height: auto;
+//     padding:0 20px;
+//   }
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,4 @@
+// 首頁kv輪播
 .op-slider {
     .carousel-item {
         position: relative;
@@ -20,5 +21,45 @@
                 margin-bottom: 10px;
             }
         }
+    }
+}
+
+// 客戶頁kv輪播
+.other-op-cooperation {
+    padding: 0;
+    justify-content: start;
+    .cooperation-container {
+        @include ipad {
+            padding: 0;
+        }
+    }
+    .carousel-inner {
+        width: auto;
+        padding-left: 80px;
+        padding-right: 80px;
+        @include ipad {
+            padding: 0;
+        }
+    }
+    .carousel-item {
+        img {
+            height: 78vh;
+            object-fit: cover;
+            @include ipad {
+                height: 75vh;
+            }
+        }
+    }
+    .carousel-caption {
+        position: relative;
+        color: #000;
+        left: auto;
+        right: auto;
+    }
+    .carousel-control-next-icon {
+        background-image: url(../images/arrow-r.svg);
+    }
+    .carousel-control-prev-icon {
+        background-image: url(../images/arrow-l.svg);
     }
 }

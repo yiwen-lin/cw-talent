@@ -8,7 +8,7 @@
             height: 44px;
             display: inline-block;
             vertical-align: middle;
-            @include mobile {
+            @include ipad {
                 height: 34px;
             }
         }
@@ -18,7 +18,7 @@
             display: flex;
             justify-content:end;
         }
-        @include mobile {
+        @include ipad {
             padding-top: 10px;
         }
 }
@@ -31,18 +31,18 @@
 }
 
 .navbar-light .navbar-toggler {
-    @include mobile {
+    @include ipad {
         border:none;
         padding:0;
     }
     &:focus {
-        @include mobile {
+        @include ipad {
             box-shadow: none;
         }
     }
 }
 .nav-link {
-    @include mobile {
+    @include ipad {
         text-align: center;
         padding:20px 0 ;
     }
