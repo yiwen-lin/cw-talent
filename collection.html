@@ -25,7 +25,6 @@
   </head>
 
   <body>
-    <!-- <div class="container"> -->
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
       <div class="container">
@@ -43,25 +42,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">全球大數據</a>
+              <a class="nav-link " href="index.html">全球大數據</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="view.html">人才觀點</a>
+              <a class="nav-link " href="view.html">人才觀點</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="collection.html">人才白皮書專區</a>
+              <a class="nav-link active" href="collection.html">人才白皮書專區</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cooperation.html">共同推動</a>
+              <a class="nav-link " href="cooperation.html">共同推動</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="hr_club.html">人資長俱樂部</a>
+              <a class="nav-link " href="hr_club.html">人資長俱樂部</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-  <!-- </div> -->
+
+
 
     
 <section class="other-op other-op-paper">
@@ -213,12 +213,25 @@
     </script>
 
 <script>
-  $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-  });
+  //tooltips
+  // $(document).ready(function(){
+  //   $('[data-toggle="tooltip"]').tooltip();   
+  // });
 
+  //nav active
+  $(function() {
+      const path = window.location.pathname.split('/').pop();
+    $('.navbar-nav .nav-link').removeClass('active');
+    $('.navbar-nav .nav-link').each(function() {
+      const link = $(this).attr('href');
+      if ( link.indexOf(path) > -1 && path !== '' ) {
+        $(this).addClass('active');
+      } else if ( path === '' ) {
+        $('.navbar-nav .nav-link[href*="index"]').addClass('active');
+      }
+    })
+  })
   </script>
-
 
   </body>
 
