@@ -12767,6 +12767,7 @@ a:hover {
   padding: 8px 28px 9px;
   font-size: 1rem;
   background-color: #fff;
+  white-space: nowrap;
 }
 
 .block-btn:hover {
@@ -12920,6 +12921,12 @@ a:hover {
   background-color: #fff;
 }
 
+.navbar .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .navbar .navbar-brand {
   margin: 0;
 }
@@ -12939,12 +12946,12 @@ a:hover {
 
 @media (min-width: 993px) {
   .navbar .navbar-collapse {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
+    -webkit-box-flex: inherit;
+        -ms-flex-positive: inherit;
+            flex-grow: inherit;
   }
 }
 
@@ -13009,24 +13016,17 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   min-height: 100vh;
-  padding: 10% 0 0;
-}
-
-@media (max-width: 992px) {
-  .op {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+  padding: 8% 0 0;
 }
 
 @media (max-width: 767px) {
   .op {
     height: calc(100vh - 64px);
+    padding: 0;
   }
 }
 
@@ -13061,6 +13061,7 @@ a:hover {
   font-size: 88px;
   font-weight: 500;
   margin-left: 40px;
+  white-space: nowrap;
 }
 
 .op .op-wrap .op-title .op-title-s {
@@ -13276,8 +13277,6 @@ a:hover {
   padding-top: 120px;
   padding-bottom: 50px;
   height: 100vh;
-  background: url(../images/op-bg.svg) center center no-repeat;
-  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13288,6 +13287,29 @@ a:hover {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+  .other-op {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 0px 40px;
+  }
+  .other-op .op-title {
+    text-align: center;
+  }
+}
+
+.other-op-view {
+  background: url(../images/op-bg-view.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .other-op-view {
+    background: url(../images/op-bg-view-mb.jpg) center center no-repeat;
+    background-size: cover;
+  }
 }
 
 .article-wrap .article-img img {
@@ -13307,12 +13329,16 @@ a:hover {
           justify-content: center;
 }
 
+.other-op-paper .paper-book {
+  width: 75%;
+  margin: auto;
+}
+
 @media (max-width: 767px) {
   .other-op-paper {
-    height: auto;
+    background-color: #F3E9D2;
   }
   .other-op-paper .op-title {
-    text-align: center;
     margin-top: 30px;
   }
 }
@@ -13320,6 +13346,13 @@ a:hover {
 .article-wrap .paper-article-img img {
   width: auto;
   margin: auto;
+}
+
+@media (max-width: 767px) {
+  .other-op-cooperation {
+    padding: 0;
+    background-image: none;
+  }
 }
 
 .cooperation-article .article-wrap .article-img img {
@@ -13331,8 +13364,60 @@ a:hover {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    background-image: none;
-    background-color: #F3E9D2;
+  }
+}
+
+.other-op-club {
+  background: url(../images/op-bg-hr.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .other-op-club {
+    background: url(../images/op-bg-hr-mb.jpg) center center no-repeat;
+    background-size: cover;
+  }
+}
+
+.cooperate-logo {
+  padding: 0 20px;
+}
+
+.cooperate-info {
+  width: 440px;
+  height: auto;
+  padding: 24px 22px;
+  border: 1px solid #6c757d;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.cooperate-info .cooperate-img {
+  width: 35%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cooperate-info .cooperate-text {
+  width: 58%;
+}
+
+@media (max-width: 767px) {
+  .cooperate-info {
+    width: 100%;
   }
 }
 
@@ -13356,6 +13441,7 @@ a:hover {
   text-indent: 2px;
   margin-bottom: 16px;
   font-size: 14px;
+  display: inline-block;
 }
 
 .article-block {
