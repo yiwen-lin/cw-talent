@@ -12807,55 +12807,66 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.other-op-cooperation {
-  padding: 0;
+.other-op.other-op-cooperation {
+  padding: 70px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
 }
 
+@media (max-width: 767px) {
+  .other-op.other-op-cooperation {
+    padding-top: 64px;
+    background-image: none;
+    height: 100vh;
+  }
+}
+
 @media (max-width: 992px) {
-  .other-op-cooperation .cooperation-container {
+  .other-op.other-op-cooperation .cooperation-container {
     padding: 0;
   }
 }
 
-.other-op-cooperation .carousel-inner {
+.other-op.other-op-cooperation .carousel-inner {
   width: auto;
   padding-left: 80px;
   padding-right: 80px;
 }
 
 @media (max-width: 992px) {
-  .other-op-cooperation .carousel-inner {
+  .other-op.other-op-cooperation .carousel-inner {
     padding: 0;
   }
 }
 
-.other-op-cooperation .carousel-item img {
-  height: 78vh;
+.other-op.other-op-cooperation .carousel-item img {
+  height: 70vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 @media (max-width: 992px) {
-  .other-op-cooperation .carousel-item img {
-    height: 75vh;
+  .other-op.other-op-cooperation .carousel-item img {
+    height: 65vh;
   }
 }
 
-.other-op-cooperation .carousel-caption {
+.other-op.other-op-cooperation .carousel-caption {
   position: relative;
   color: #000;
   left: auto;
   right: auto;
 }
 
-.other-op-cooperation .carousel-control-next-icon {
+.other-op.other-op-cooperation .carousel-control-next-icon {
   background-image: url(../images/arrow-r.svg);
 }
 
-.other-op-cooperation .carousel-control-prev-icon {
+.other-op.other-op-cooperation .carousel-control-prev-icon {
   background-image: url(../images/arrow-l.svg);
 }
 
@@ -13319,6 +13330,12 @@ a:hover {
      object-fit: cover;
 }
 
+@media (max-width: 767px) {
+  .article-wrap .article-img img {
+    height: 240px;
+  }
+}
+
 .article-wrap .article-text {
   padding: 0 15px;
 }
@@ -13348,13 +13365,6 @@ a:hover {
   margin: auto;
 }
 
-@media (max-width: 767px) {
-  .other-op-cooperation {
-    padding: 0;
-    background-image: none;
-  }
-}
-
 .cooperation-article .article-wrap .article-img img {
   height: 240px;
 }
@@ -13381,6 +13391,7 @@ a:hover {
 
 .cooperate-logo {
   padding: 0 20px;
+  margin-bottom: 20px;
 }
 
 .cooperate-info {
