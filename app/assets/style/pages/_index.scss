@@ -1,15 +1,16 @@
 .op {
   display: flex;
   flex-direction:column;
-  justify-content: space-between;
+  justify-content: center;
   min-height: 100vh;
-  padding: 10% 0 0;
+  padding: 8% 0 0;
   // overflow:hidden;
+  @include ipad {
+    
+  }
   @include mobile {
-    padding-top:45%;
-    padding-bottom: 50px;
-    display: block;
     height: calc(100vh - 64px);
+    padding: 0;
   }
   .op-img {
     padding: 0 50px;
@@ -31,6 +32,7 @@
       font-size: 88px;
       font-weight: 500;
       margin-left: 40px;
+      white-space: nowrap;
       .op-title-s {
         color:#D3D3D4;
         font-size: 24px;

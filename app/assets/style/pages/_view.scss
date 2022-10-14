@@ -2,12 +2,28 @@
     padding-top: 120px;
     padding-bottom: 50px;
     height: 100vh;
-    background: url(../images/op-bg.svg) center center no-repeat;
-    background-size: cover;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-end; 
+
+    @include mobile {
+        height: auto;
+        min-height:100vh;
+        padding: 100px 0px 40px;
+        .op-title {
+            text-align: center;
+        } 
+    }
+}
+
+.other-op-view {
+    background: url(../images/op-bg-view.jpg) center center no-repeat;
+    background-size: cover;
+    @include mobile {
+      background: url(../images/op-bg-view-mb.jpg) center center no-repeat;
+      background-size: cover;
+    }
 }
 
 .article-wrap {

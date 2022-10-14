@@ -1,6 +1,9 @@
 .navbar {
     border-bottom: 1px solid $gray-700;
     background-color: #fff;
+    .logo {
+        display:flex;
+    }
     .navbar-brand {
         margin: 0;
         img {
@@ -15,8 +18,9 @@
     }
     .navbar-collapse {
         @include pc {
-            display: flex;
+            // display: flex;
             justify-content:end;
+            flex-grow: inherit;
         }
         @include ipad {
             padding-top: 10px;

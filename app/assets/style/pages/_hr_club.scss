@@ -7,6 +7,50 @@
 //     }
 // }
 
+.other-op-view,.other-op-club,.other-op-paper {
+  @include ipad {  
+    justify-content: center;
+  }
+}
+
+.other-op-club {
+  background: url(../images/op-bg-hr.jpg) center center no-repeat;
+  background-size: cover;
+  @include mobile {
+    background: url(../images/op-bg-hr-mb.jpg) center center no-repeat;
+    background-size: cover;
+  }
+}
+
+.cooperate-logo {
+  padding: 0 20px;
+}
+
+.cooperate-info {
+  width: 440px;
+  height: auto;
+  padding: 24px 22px;
+  border: 1px solid $gray-600;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  .cooperate-img {
+    width: 35%;
+    height: auto;
+    object-fit: cover;
+  }
+  .cooperate-text {
+    width: 58%;
+  }
+  @include mobile {
+    width: 100%;
+  }
+}
+
+
 .event-article-img {
     img {
       height: 440px;

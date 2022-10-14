@@ -1,11 +1,14 @@
 .other-op-paper {
     justify-content: center;
+    .paper-book {
+        width: 75%;
+        margin: auto;
+    }
     @include mobile {
-        height: auto;
-        background-image: none;
+        // height: auto;
         background-color: $secondary;
         .op-title {
-            text-align: center;
+            // text-align: center;
             margin-top: 30px;
         }
     }
