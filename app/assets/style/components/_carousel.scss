@@ -25,9 +25,15 @@
 }
 
 // 客戶頁kv輪播
-.other-op-cooperation {
-    padding: 0;
+.other-op.other-op-cooperation {
+    padding: 70px 0 0;
+    display: flex;
     justify-content: start;
+    @include mobile {
+        padding-top: 64px;
+        background-image: none;
+        height: 100vh;
+    }
     .cooperation-container {
         @include ipad {
             padding: 0;
@@ -43,10 +49,10 @@
     }
     .carousel-item {
         img {
-            height: 78vh;
+            height: 70vh;
             object-fit: cover;
             @include ipad {
-                height: 75vh;
+                height: 65vh;
             }
         }
     }

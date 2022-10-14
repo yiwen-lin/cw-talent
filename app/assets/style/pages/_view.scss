@@ -32,6 +32,9 @@
             height: 300px;
             width: 100%;
             object-fit: cover;
+            @include mobile {
+                height: 240px;
+            }
         }
     }
     .article-text {
