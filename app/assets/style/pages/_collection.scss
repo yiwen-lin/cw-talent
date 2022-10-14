@@ -1,11 +1,14 @@
 .other-op-paper {
     justify-content: center;
+    background: url(../images/op-bg.svg) center no-repeat;
+    background-size: cover;
     .paper-book {
-        width: 75%;
+        width: 70%;
         margin: auto;
     }
     @include mobile {
         // height: auto;
+        background: none;
         background-color: $secondary;
         .op-title {
             // text-align: center;

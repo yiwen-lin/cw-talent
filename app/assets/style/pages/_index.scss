@@ -208,6 +208,9 @@
     height: 330px;
     width: 100%;
     object-fit: cover;
+    @include mobile {
+      height: 240px;
+    }
   }
 }
 .op-article-text {
