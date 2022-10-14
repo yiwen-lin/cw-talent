@@ -12851,7 +12851,7 @@ a:hover {
 
 @media (max-width: 992px) {
   .other-op.other-op-cooperation .carousel-item img {
-    height: 65vh;
+    height: 60vh;
   }
 }
 
@@ -13272,6 +13272,12 @@ a:hover {
      object-fit: cover;
 }
 
+@media (max-width: 767px) {
+  .op-article-img img {
+    height: 240px;
+  }
+}
+
 .op-article-text {
   padding-left: 48px;
   padding-left: 48px;
@@ -13344,15 +13350,18 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: url(../images/op-bg.svg) center no-repeat;
+  background-size: cover;
 }
 
 .other-op-paper .paper-book {
-  width: 75%;
+  width: 70%;
   margin: auto;
 }
 
 @media (max-width: 767px) {
   .other-op-paper {
+    background: none;
     background-color: #F3E9D2;
   }
   .other-op-paper .op-title {
