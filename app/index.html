@@ -6,6 +6,8 @@ current: index
 description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才白皮書，希望成為台灣最完整、最清晰的人才藍圖，呈現全台人才未來的策略縮影，為台灣政府、企業、校園人才發展找出最佳策略及方向。
 ---
 
+
+
 <section class="op">
     <div class="container">
       <h1 class="op-wrap">
@@ -68,8 +70,8 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
   </div>
   <!-- 圖表0：世界地圖：pc -->
   <div class="chart-pc">
-    <div class="chart-img">
-      <img src="assets/images/chart/chart0.svg" alt="">
+    <div id="map-chart" class="chart-img">
+      <img class="map-bg" src="assets/images/front-end/map-bg.svg" alt="">
     </div>
     <div class="container">
       <div class="chart-txt mb-3">
@@ -84,15 +86,15 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
       </div>
     </div>
   </div>
-   <!-- 圖表0：mb -->
-   <div class="chart-mb">
+  <!-- 圖表0：mb -->
+  <div class="chart-mb">
     <div class="container">
-      <img src="assets/images/chart/chart0-mb.svg" alt="">
+      <div id="countries-bar-chart"></div>
       <div class="chart-source">
         <h5>資料來源：ManpowerGroup</h5>
       </div>
     </div>
-   </div>
+  </div>
 </section>
 
 <section class="chart chart1 bg-secondary">
@@ -101,19 +103,19 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
       <h3 class="text-center"><span class="text-line">原因一</span></h3>
       <h2 class="mb-4 mb-md-6" data-aos="fade-down">生育率世界最低<br>
         連續兩年「生不如死」</h2>
-      <div class="row">
+      <div class="row" id="chart1-1">
         <!-- 圖表1-1：數字變化 -->
         <div class="col-md-4 text-center border-right mb-6">
           <h4>水平世代交替</h4>
-          <div class="display-2 chart-number">2.1％</div>
+          <div class="display-2 chart-number"><span class="d3-number c1-1" data-number="2.1"></span>％</div>
         </div>
         <div class="col-md-4 text-center border-right mb-6">
           <h4>OECD國家平均</h4>
-          <div class="display-2 chart-number">1.6％</div>
+          <div class="display-2 chart-number"><span class="d3-number c1-1" data-number="1.6"></span>％</div>
         </div>
         <div class="col-md-4 text-center mb-4">
           <h4>台灣現況</h4>
-          <div class="display-2 chart-number">0.89％</div>
+          <div class="display-2 chart-number"><span class="d3-number c1-1" data-number="0.89"></span>％</div>
         </div>
 
         <div class="chart-source">
@@ -128,19 +130,12 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
     <div class="chart1-2 mt-8">
       <h2 class="mb-4 mb-md-6" data-aos="fade-down">低生育率改變人口結構<br>
         老幼黃金交叉</h2>
-        <!-- pc -->
-        <div class="chart-pc">
+        <!-- pc/mb -->
+        <div>
           <div class="col-md-10 offset-md-1">
-            <img src="assets/images/chart/chart1.svg" alt="">
+            <svg id="low-birth-line-chart"></svg>
           </div>
         </div>
-        <!-- mb -->
-        <div class="chart-mb">
-          <div class="col-12">
-            <img src="assets/images/chart/chart1-mb.svg" alt="">
-          </div>
-        </div>
-
     </div>
   </div>
 </section>
@@ -152,19 +147,35 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
       但工作人口減少50萬</h2>
     <div class="row">
       <!-- 圖表2-1:線段長出＋hover效果 -->
-      <div class="col-md-5 offset-md-1 text-center">
+
+      <div class="d3-chart-flex-wrap">
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">全台職缺數變化</h4>
+            <svg id="tw_vacancies-line_chart"></svg>
+          </div>
+        </div>
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">工作年齡人口（15~64歲）</h4>
+            <svg id="work_people-line_chart"></svg>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-5 offset-md-1 text-center">
         <h4 class="text-primary mb-2 mb-lg-4">全台職缺數變化</h4>
+        
         <img src="assets/images/chart/chart2-1.svg" alt="">
       </div>
       <div class="col-md-5 text-center mt-7 mt-lg-0">
         <h4 class="text-primary mb-2 mb-lg-4">工作年齡人口（15~64歲）</h4>
         <img src="assets/images/chart/chart2-2.svg" alt="">
-      </div>
+      </div> -->
 
       <!-- 圖表2-2:數字變化 -->
-      <div class="text-center mt-6  mt-lg-8">
+      <div class="text-center mt-6  mt-lg-8" id="chart2-2">
         <h4>每人平均可分到職缺數</h4>
-        <div class="display-2 chart-number">1.56個</div>
+        <div class="display-2 chart-number"><span class="d3-number c2-2" data-number="1.56"></span>個</div>
       </div>
       <div class="chart-source">
         <h5>資料來源：勞動部</h5>
@@ -191,7 +202,27 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
     </div>
     <div class="row">
       <!-- 圖表3:長出長條圖 -->
-      <div class="col-md-5 offset-md-1 text-center">
+      <div class="d3-chart-flex-wrap">
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">Q：您預期何時組織會出現技能落差？</h4>
+            <svg id="skill_when-bar_chart"></svg>
+            <div class="chart-source">
+              <h5>資料來源：McKinsey & Company</h5>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">Q：您的員工技能在3年內需重塑或增能的比例？</h4>
+            <svg id="skill_in_3years-bar_chart"></svg>
+            <div class="chart-source">
+              <h5>資料來源：《Cheers》2022企業人才永續調查</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-5 offset-md-1 text-center">
         <h4 class="text-primary mb-2 mb-lg-4">Q：您預期何時組織會出現技能落差？</h4>
         <img src="assets/images/chart/chart3-1.svg" alt="">
         <div class="chart-source">
@@ -204,7 +235,7 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
         <div class="chart-source">
           <h5>資料來源：《Cheers》2022企業人才永續調查</h5>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -220,7 +251,24 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
     </div>
     <div class="row">
       <!-- 圖表4:長出圓餅圖及拉線字 -->
-      <div class="col-md-5 offset-md-1 text-center">
+      <div class="d3-chart-flex-wrap">
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">想要在工作中真正「做自己」</h4>
+            <svg id="self-arc_chart"></svg>
+          </div>
+        </div>
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">更偏好能部分遠端的混合工作</h4>
+            <svg id="wfh-arc_chart"></svg>
+          </div>
+        </div>
+        <div class="col-12 chart-source">
+          <h5>資料來源：PwC</h5>
+        </div>
+      </div>
+      <!-- <div class="col-md-5 offset-md-1 text-center">
         <h4 class="text-primary mb-2 mb-lg-4">想要在工作中真正「做自己」</h4>
         <img src="assets/images/chart/chart4-1.svg" alt="">
 
@@ -231,7 +279,7 @@ description: 天下學習與Cheers快樂工作人聯合推出台灣首部人才�
       </div>
       <div class="col-12 chart-source">
         <h5>資料來源：PwC</h5>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
