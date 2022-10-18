@@ -22,9 +22,26 @@
     <link rel="shortcut icon" href="https://www.cw.com.tw/assets_new/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" href="./assets/style/all.css">
+    <!-- index 圖表 -->
+    <!-- <link rel="stylesheet" href="./assets/style/front-end/css/main.css"> -->
+    <script src="./assets/js/front-end/d3.v3.min.js"></script>
+    <style>
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
   </head>
 
   <body>
+
+    <!-- SVG symbol -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="geotagging">
+      <path class="d" d="M15.68,7.43c0,.35-.04,1.18-.05,1.24-.17,1.79-.88,3.34-2.13,4.63-.97,1.01-2.38,1.95-3.16,3.11-1.37,2.06-1.88,4.4-2.26,6.87-.04,.28-.07,.56-.11,.84-.12-1.09-.74-3.17-1.1-4.19-.67-2.89-2.21-4.25-4.26-6.41-1.08-1.14-1.87-2.42-2.19-3.97-.07-.35-.12-.71-.18-1.07,0-.35,.07-1.5,.1-1.72C.76,3.82,3.14,1.18,6.04,.5c.46-.11,.93-.17,1.39-.25,.35,0,1.52,.07,1.74,.11,3.06,.45,5.66,2.89,6.3,5.92,.08,.38,.13,.77,.2,1.16Z"/>
+  </symbol>
+</svg>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
       <div class="container">
@@ -64,6 +81,8 @@
 
 
     
+
+
 <section class="op">
     <div class="container">
       <h1 class="op-wrap">
@@ -126,8 +145,8 @@
   </div>
   <!-- 圖表0：世界地圖：pc -->
   <div class="chart-pc">
-    <div class="chart-img">
-      <img src="assets/images/chart/chart0.svg" alt="">
+    <div id="map-chart" class="chart-img">
+      <img class="map-bg" src="assets/images/front-end/map-bg.svg" alt="">
     </div>
     <div class="container">
       <div class="chart-txt mb-3">
@@ -142,15 +161,15 @@
       </div>
     </div>
   </div>
-   <!-- 圖表0：mb -->
-   <div class="chart-mb">
+  <!-- 圖表0：mb -->
+  <div class="chart-mb">
     <div class="container">
-      <img src="assets/images/chart/chart0-mb.svg" alt="">
+      <div id="countries-bar-chart"></div>
       <div class="chart-source">
         <h5>資料來源：ManpowerGroup</h5>
       </div>
     </div>
-   </div>
+  </div>
 </section>
 
 <section class="chart chart1 bg-secondary">
@@ -159,19 +178,19 @@
       <h3 class="text-center"><span class="text-line">原因一</span></h3>
       <h2 class="mb-4 mb-md-6" data-aos="fade-down">生育率世界最低<br>
         連續兩年「生不如死」</h2>
-      <div class="row">
+      <div class="row" id="chart1-1">
         <!-- 圖表1-1：數字變化 -->
         <div class="col-md-4 text-center border-right mb-6">
           <h4>水平世代交替</h4>
-          <div class="display-2 chart-number">2.1％</div>
+          <div class="display-2 chart-number"><span class="d3-number c1-1" data-number="2.1"></span>％</div>
         </div>
         <div class="col-md-4 text-center border-right mb-6">
           <h4>OECD國家平均</h4>
-          <div class="display-2 chart-number">1.6％</div>
+          <div class="display-2 chart-number"><span class="d3-number c1-1" data-number="1.6"></span>％</div>
         </div>
         <div class="col-md-4 text-center mb-4">
           <h4>台灣現況</h4>
-          <div class="display-2 chart-number">0.89％</div>
+          <div class="display-2 chart-number"><span class="d3-number c1-1" data-number="0.89"></span>％</div>
         </div>
 
         <div class="chart-source">
@@ -186,19 +205,12 @@
     <div class="chart1-2 mt-8">
       <h2 class="mb-4 mb-md-6" data-aos="fade-down">低生育率改變人口結構<br>
         老幼黃金交叉</h2>
-        <!-- pc -->
-        <div class="chart-pc">
+        <!-- pc/mb -->
+        <div>
           <div class="col-md-10 offset-md-1">
-            <img src="assets/images/chart/chart1.svg" alt="">
+            <svg id="low-birth-line-chart"></svg>
           </div>
         </div>
-        <!-- mb -->
-        <div class="chart-mb">
-          <div class="col-12">
-            <img src="assets/images/chart/chart1-mb.svg" alt="">
-          </div>
-        </div>
-
     </div>
   </div>
 </section>
@@ -210,19 +222,35 @@
       但工作人口減少50萬</h2>
     <div class="row">
       <!-- 圖表2-1:線段長出＋hover效果 -->
-      <div class="col-md-5 offset-md-1 text-center">
+
+      <div class="d3-chart-flex-wrap">
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">全台職缺數變化</h4>
+            <svg id="tw_vacancies-line_chart"></svg>
+          </div>
+        </div>
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">工作年齡人口（15~64歲）</h4>
+            <svg id="work_people-line_chart"></svg>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-5 offset-md-1 text-center">
         <h4 class="text-primary mb-2 mb-lg-4">全台職缺數變化</h4>
+        
         <img src="assets/images/chart/chart2-1.svg" alt="">
       </div>
       <div class="col-md-5 text-center mt-7 mt-lg-0">
         <h4 class="text-primary mb-2 mb-lg-4">工作年齡人口（15~64歲）</h4>
         <img src="assets/images/chart/chart2-2.svg" alt="">
-      </div>
+      </div> -->
 
       <!-- 圖表2-2:數字變化 -->
-      <div class="text-center mt-6  mt-lg-8">
+      <div class="text-center mt-6  mt-lg-8" id="chart2-2">
         <h4>每人平均可分到職缺數</h4>
-        <div class="display-2 chart-number">1.56個</div>
+        <div class="display-2 chart-number"><span class="d3-number c2-2" data-number="1.56"></span>個</div>
       </div>
       <div class="chart-source">
         <h5>資料來源：勞動部</h5>
@@ -249,7 +277,27 @@
     </div>
     <div class="row">
       <!-- 圖表3:長出長條圖 -->
-      <div class="col-md-5 offset-md-1 text-center">
+      <div class="d3-chart-flex-wrap">
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">Q：您預期何時組織會出現技能落差？</h4>
+            <svg id="skill_when-bar_chart"></svg>
+            <div class="chart-source">
+              <h5>資料來源：McKinsey & Company</h5>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">Q：您的員工技能在3年內需重塑或增能的比例？</h4>
+            <svg id="skill_in_3years-bar_chart"></svg>
+            <div class="chart-source">
+              <h5>資料來源：《Cheers》2022企業人才永續調查</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-5 offset-md-1 text-center">
         <h4 class="text-primary mb-2 mb-lg-4">Q：您預期何時組織會出現技能落差？</h4>
         <img src="assets/images/chart/chart3-1.svg" alt="">
         <div class="chart-source">
@@ -262,7 +310,7 @@
         <div class="chart-source">
           <h5>資料來源：《Cheers》2022企業人才永續調查</h5>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -278,7 +326,24 @@
     </div>
     <div class="row">
       <!-- 圖表4:長出圓餅圖及拉線字 -->
-      <div class="col-md-5 offset-md-1 text-center">
+      <div class="d3-chart-flex-wrap">
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">想要在工作中真正「做自己」</h4>
+            <svg id="self-arc_chart"></svg>
+          </div>
+        </div>
+        <div class="flex-item-wrap">
+          <div class="flex-item">
+            <h4 class="text-primary mb-2 mb-lg-4">更偏好能部分遠端的混合工作</h4>
+            <svg id="wfh-arc_chart"></svg>
+          </div>
+        </div>
+        <div class="col-12 chart-source">
+          <h5>資料來源：PwC</h5>
+        </div>
+      </div>
+      <!-- <div class="col-md-5 offset-md-1 text-center">
         <h4 class="text-primary mb-2 mb-lg-4">想要在工作中真正「做自己」</h4>
         <img src="assets/images/chart/chart4-1.svg" alt="">
 
@@ -289,7 +354,7 @@
       </div>
       <div class="col-12 chart-source">
         <h5>資料來源：PwC</h5>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -357,17 +422,23 @@
       </div>
     </footer>
 
+    <div id="chart-tooltip"></div>
+
     <script src="./assets/js/vendors.js"></script>
     <script src="./assets/js/all.js"></script>
-
+    <!-- index 圖表 -->
+    <script src="./assets/js/front-end/main-hy.js"></script>
+    <script src="./assets/js/front-end/main-bk.js"></script>
+   
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-     AOS.init();
-    </script>
 
+     
 <script>
+  <!-- aos -->
+  AOS.init();
+
   //tooltips
   // $(document).ready(function(){
   //   $('[data-toggle="tooltip"]').tooltip();   

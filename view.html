@@ -22,9 +22,26 @@
     <link rel="shortcut icon" href="https://www.cw.com.tw/assets_new/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" href="./assets/style/all.css">
+    <!-- index 圖表 -->
+    <!-- <link rel="stylesheet" href="./assets/style/front-end/css/main.css"> -->
+    <script src="./assets/js/front-end/d3.v3.min.js"></script>
+    <style>
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
   </head>
 
   <body>
+
+    <!-- SVG symbol -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="geotagging">
+      <path class="d" d="M15.68,7.43c0,.35-.04,1.18-.05,1.24-.17,1.79-.88,3.34-2.13,4.63-.97,1.01-2.38,1.95-3.16,3.11-1.37,2.06-1.88,4.4-2.26,6.87-.04,.28-.07,.56-.11,.84-.12-1.09-.74-3.17-1.1-4.19-.67-2.89-2.21-4.25-4.26-6.41-1.08-1.14-1.87-2.42-2.19-3.97-.07-.35-.12-.71-.18-1.07,0-.35,.07-1.5,.1-1.72C.76,3.82,3.14,1.18,6.04,.5c.46-.11,.93-.17,1.39-.25,.35,0,1.52,.07,1.74,.11,3.06,.45,5.66,2.89,6.3,5.92,.08,.38,.13,.77,.2,1.16Z"/>
+  </symbol>
+</svg>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
       <div class="container">
@@ -348,17 +365,23 @@
       </div>
     </footer>
 
+    <div id="chart-tooltip"></div>
+
     <script src="./assets/js/vendors.js"></script>
     <script src="./assets/js/all.js"></script>
-
+    <!-- index 圖表 -->
+    <script src="./assets/js/front-end/main-hy.js"></script>
+    <script src="./assets/js/front-end/main-bk.js"></script>
+   
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-     AOS.init();
-    </script>
 
+     
 <script>
+  <!-- aos -->
+  AOS.init();
+
   //tooltips
   // $(document).ready(function(){
   //   $('[data-toggle="tooltip"]').tooltip();   
